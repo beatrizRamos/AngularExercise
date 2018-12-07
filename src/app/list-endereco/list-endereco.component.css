@@ -1,0 +1,37 @@
+h4 {
+    color: #23877d;
+}
+h5 {
+    color: #23877d;
+}
+.content {
+    width: 80%;
+    background: white;
+    margin-left: 10%;
+    padding: 20px;
+}
+
+a {
+
+    text-align: center;
+    display: -webkit-inline-box;
+    padding: 5px;
+    border-radius: 100px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+table input {
+    border: 1px solid;
+    padding-left: 8px;
+    background: white;
+}
+th {
+    background: #24292E;
+    color: white;
+    border: 2px solid;
+}
+
+.remove-parent i {
+    text-align: center;
+    color: black;
+}

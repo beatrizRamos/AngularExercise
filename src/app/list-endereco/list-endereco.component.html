@@ -1,0 +1,49 @@
+
+<div class="content card">
+
+<div *ngIf="enderecos">
+  <h5>Endereços cadastrados</h5>
+  <table> 
+    <thead>
+      <tr>
+        <th>Bairro</th>
+        <th>Rua</th>
+        <th>Número</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let endereco of enderecos">
+        <td>
+          <span *ngIf="!endereco.editando">{{endereco.bairro}}</span>
+          <input *ngIf="endereco.editando" type="text" [(ngModel)]="endereco.bairro" name="bairro-{{endereco.eid}}">
+        </td>
+        <td>
+            <span *ngIf="!endereco.editando">{{endereco.rua}}</span>
+            <input *ngIf="endereco.editando" type="text" [(ngModel)]="endereco.rua" name="rua-{{endereco.eid}}">
+          </td>
+          <td>
+            <span *ngIf="!endereco.editando">{{endereco.numero}}</span>
+            <input *ngIf="endereco.editando" type="text" [(ngModel)]="endereco.numero" name="numero-{{endereco.eid}}">
+          </td>
+        <td *ngIf="!endereco.editando" class="remove-parent">
+          <a class="edit-parent" (click)="editar(endereco)" href="javascript:void(0);">
+            <i class="material-icons">edit</i>
+          </a>
+          <a (click)="remover(endereco.eid)" href="javascript:void(0);">
+            <i class="material-icons">delete</i>
+          </a>
+        </td>
+        <td *ngIf="endereco.editando" class="remove-parent">
+            <a class="confirm-parent" (click)="confirmEdit(endereco)" href="javascript:void(0);">
+              <i class="material-icons">check</i>
+            </a>
+            <a (click)="cancelEdit(endereco)" href="javascript:void(0);">
+              <i class="material-icons">close</i>
+            </a>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

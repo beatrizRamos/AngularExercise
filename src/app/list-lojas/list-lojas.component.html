@@ -1,0 +1,43 @@
+<div class="content card">
+<div *ngIf="lojas">
+  <h5>Lojas cadastrados</h5>
+  <table> 
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>CNPJ</th>
+        <th></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loja of lojas">
+        <td>
+          <span *ngIf="!loja.editando">{{loja.nome}}</span>
+          <input *ngIf="loja.editando" type="text" [(ngModel)]="loja.nome" name="nome-{{loja.eid}}">
+        </td>
+        <td>
+            <span *ngIf="!loja.editando">{{loja.cnpj}}</span>
+            <input *ngIf="loja.editando" type="text" [(ngModel)]="loja.cnpj" name="cnpj-{{loja.eid}}">
+          </td>
+        <td *ngIf="!loja.editando" class="remove-parent">
+          <a class="edit-parent" (click)="editar(loja)" href="javascript:void(0);">
+            <i class="material-icons">edit</i>
+          </a>
+          <a (click)="remover(loja.eid)" href="javascript:void(0);">
+            <i class="material-icons">delete</i>
+          </a>
+        </td>
+        <td *ngIf="loja.editando" class="remove-parent">
+            <a class="confirm-parent" (click)="confirmEdit(loja)" href="javascript:void(0);">
+              <i class="material-icons">check</i>
+            </a>
+            <a (click)="cancelEdit(loja)" href="javascript:void(0);">
+              <i class="material-icons">close</i>
+            </a>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

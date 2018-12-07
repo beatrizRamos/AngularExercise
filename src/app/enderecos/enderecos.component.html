@@ -1,0 +1,17 @@
+<div class="content card">
+  <h4>Cadastro de Endereço</h4>
+
+    <div>
+      <input type="text" class="form-control" id="rua" placeholder="Digite a rua" [(ngModel)]="novoEndereco.rua" />
+  </div>
+  <div>
+    <input type="number" class="form-control" id="numero" placeholder="Digite o número" [(ngModel)]="novoEndereco.numero"  />
+  </div>
+  <div>
+    <input type="text" class="form-control" id="bairro" placeholder="Digite o bairro"[(ngModel)]="novoEndereco.bairro" />
+
+  </div>
+ <div class="button-container">
+      <button [disabled]="!novoEndereco.rua || !novoEndereco.numero || !novoEndereco.bairro" (click)="cadastrar()" >Salvar</button>
+    </div>
+

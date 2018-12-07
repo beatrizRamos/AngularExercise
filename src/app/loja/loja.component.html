@@ -1,0 +1,13 @@
+<div class="content card">
+  <h4>Cadastro de Loja</h4>
+
+    <div>
+      <input type="text" class="form-control" id="nome" placeholder="Digite o nome" [(ngModel)]="novaLoja.nome" />
+  </div>
+  <div>
+    <input type="text" class="form-control" id="cnpj" placeholder="Digite o CNPJ" [(ngModel)]="novaLoja.cnpj" />
+  </div>
+  
+ <div class="button-container">
+      <button [disabled]="!novaLoja.nome || !novaLoja.cnpj" (click)="cadastrar()" >Salvar</button>
+    </div>
